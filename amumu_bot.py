@@ -3,9 +3,9 @@ import praw
 import sys
 import datetime
 
-r = praw.Reddit('Rammus OK Bot by /u/Xwerve and /u/liquidized')
-username = accounts.rammus_ok_bot_user
-password = accounts.rammus_ok_bot_pass
+r = praw.Reddit('Amumu Bot by /u/Xwerve and /u/liquidized')
+username = accounts.amumu_bot_user
+password = accounts.amumu_bot_pass
 subreddit = r.get_subreddit('leagueoflegends')
 comment_subreddits = 'leagueoflegends'
 r.login(username, password)
