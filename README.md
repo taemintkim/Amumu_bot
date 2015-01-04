@@ -1,4 +1,4 @@
-Rammus_OK_Bot
+Amumu_Bot
 =============
 
-ok
+I thought you'd never pick me
