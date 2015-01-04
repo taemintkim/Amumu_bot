@@ -21,19 +21,7 @@ init_responses = ["Let me give you a hug.", "Let's be friends forever.", "Would 
 yes_response = "I thought you'd never pick me."
 no_response = "Awww. :'("
 
-while True:
-	if len(comment_ids) > 100:
-		comment_ids.pop(0)
-	try:
-		comment = next(comments)
-		post = next(posts)
-	except StopIteration:
-		posts = subreddit.get_new()
-		comments = r.get_comments('leagueoflegends')
-		comment = next(comments)
-		post = next(posts)
-	except:
- 		os.execv(__file__, sys.argv)
+def reply_2_comment(comment, trigger):
 	for phrase in key_phrase:
 		if phrase == str(comment).lower() and str(comment.author) != username and str(comment.id) not in comment_ids:
 			print(comment, 'posted by', comment.author)
@@ -47,6 +35,7 @@ while True:
 			comment.upvote()
 			comment_ids.append(str(comment.id))
 			comment.reply('ok')
+def reply_2_post(post, trigger):
 	for word in key_words:
 		if (word in str(post).lower() or word in str(post.selftext).lower()) and str(post.id) not in post_ids:
 			current_time = datetime.datetime.now().time()
@@ -56,5 +45,22 @@ while True:
 				post_ids.append(str(post.id))
 				post.add_comment('ok')
 			except praw.errors.APIException:
-				print("POST TOO OLD")
+				print("POST TOO OLD")	
+
+while True:
+	if len(comment_ids) > 100:
+		comment_ids.pop(0)
+	try:
+		comment = next(comments)
+		post = next(posts)
+	except StopIteration:
+		posts = subreddit.get_new()
+		comments = r.get_comments('leagueoflegends')
+		comment = next(comments)
+		post = next(posts)
+	except:
+ 		os.execv(__file__, sys.argv)
+ 	reply_2_comment(comment)
+ 	reply_2_post(post)
+
 
