@@ -2,6 +2,7 @@ import accounts
 import praw
 import sys
 import datetime
+import random
 
 r = praw.Reddit('Amumu Bot by /u/Xwerve and /u/liquidized')
 username = accounts.amumu_bot_user
@@ -15,6 +16,10 @@ key_phrase = ['ok', 'ok.', 'taunt']
 key_words = ['rammus', 'spiky armadillo']
 comment_ids = []
 post_ids = []
+
+init_responses = ["Let me give you a hug.", "Let's be friends forever.", "Would you like to be friends?", "Come play with me."]
+yes_response = "I thought you'd never pick me."
+no_response = "Awww. :'("
 
 while True:
 	if len(comment_ids) > 100:
