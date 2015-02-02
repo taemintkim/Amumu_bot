@@ -6,11 +6,11 @@ Amumu_Bot
 
     >>> "I'm sad. :'(" by Thomas
   
-    >>> "I sense that you are sad. Would you like to be friends?" by Amumu_bot #first response
+      >>> "I sense that you are sad. Would you like to be friends?" by Amumu_bot #first response
     
-      >>> "Yes." by Thomas
+        >>> "Yes." by Thomas
       
-        >>> "I thought you'd never pick me. (づ｡◕‿‿◕｡)づⒽⓤⒼ♥" by Amumu_bot #second response to "yes"
+          >>> "I thought you'd never pick me. (づ｡◕‿‿◕｡)づⒽⓤⒼ♥" by Amumu_bot #second response to "yes"
         
 
 The triggers, responses, and subreddit can easily changed.
